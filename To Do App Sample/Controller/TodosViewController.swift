@@ -38,7 +38,7 @@ class TodosViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         searchBar.delegate = self
         searchBar.placeholder = "Search by title or user name"
-        searchBar.scopeButtonTitles = ["All", "Completed", "Not Completed"] // ✅ Scope Buttons
+        searchBar.scopeButtonTitles = ["All", "Completed", "Not Completed"] 
         searchBar.showsScopeBar = true
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(searchBar)

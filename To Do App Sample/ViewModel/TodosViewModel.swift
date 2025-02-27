@@ -19,7 +19,7 @@ class TodosViewModel {
     
     private var searchQuery: String = ""
     private var filterCompletion: Bool? = nil
-    private var filterUserName: String? = nil // ✅ New user name filter
+    private var filterUserName: String? = nil
     
     func fetchData() {
         if let cachedTodos = CacheService().getCachedTodos(), let cachedUsers = CacheService().getCachedUsers() {
@@ -63,7 +63,7 @@ class TodosViewModel {
             let newTodos = Array(allTodos[start..<end])
             filteredTodos.append(contentsOf: newTodos)
             currentPage += 1
-            applyFilters() // ✅ Apply filters
+            applyFilters()
         }
     }
 
@@ -103,7 +103,7 @@ class TodosViewModel {
             }
         }
         
-        filteredTodos = Array(results.prefix(currentPage * pageSize)) // ✅ Apply pagination
+        filteredTodos = Array(results.prefix(currentPage * pageSize))
         
         DispatchQueue.main.async {
             self.onDataUpdated?()
